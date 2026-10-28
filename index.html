@@ -99,13 +99,6 @@
 <script>
 (function(){
 const $=id=>document.getElementById(id);
-const stations={
- capital:{name:"帝都觀測區",temp:"18.6",condition:"薄曇り",icon:"◉",pressure:"1016.4",humidity:"62",wind:"東北東",speed:"2.8"},
- north:{name:"北部觀測區",temp:"11.2",condition:"晴れ間",icon:"☼",pressure:"1021.8",humidity:"48",wind:"北北西",speed:"3.6"},
- coast:{name:"沿海觀測區",temp:"16.9",condition:"海霧",icon:"≈",pressure:"1013.7",humidity:"81",wind:"東南東",speed:"5.1"},
- south:{name:"南部觀測區",temp:"23.1",condition:"晴れ",icon:"☼",pressure:"1011.9",humidity:"57",wind:"南南東",speed:"2.2"}
-};
-$("station").addEventListener("change",e=>{const d=stations[e.target.value];$("placeName").textContent=d.name;$("temp").textContent=d.temp;$("condition").textContent=d.condition;$("conditionIcon").textContent=d.icon;$("pressure").textContent=d.pressure;$("humidity").textContent=d.humidity;$("wind").textContent=d.wind;$("windSpeed").textContent=d.speed;});
 const navWrap=$("navWrap"),menu=$("menuToggle");
 menu.addEventListener("click",()=>{const open=navWrap.classList.toggle("open");menu.setAttribute("aria-expanded",String(open));menu.textContent=open?"閉じる ×":"目録 ☰";});
 document.querySelectorAll("#mainNav a").forEach(a=>a.addEventListener("click",()=>{navWrap.classList.remove("open");menu.setAttribute("aria-expanded","false");menu.textContent="目録 ☰";}));
